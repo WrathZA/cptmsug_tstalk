@@ -35,7 +35,8 @@ const images = {
   ts: require("../assets/ts.png"),
   anders: require("../assets/anders.png"),
   cptmsug: require("../assets/ctmsug.jpg"),
-  tsgraph: require("../assets/tsgraph.png")
+  tsgraph: require("../assets/tsgraph.png"),
+  ta: require("../assets/ta.png")
 };
 
 preloader(images);
@@ -201,6 +202,56 @@ export default class Presentation extends React.Component {
             margin="20px auto"
           />
         </Slide>
+
+        
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={2} textColor="primary" caps>FEATURES!</Heading>
+        </Slide>
+
+        <Slide>
+          <Heading size={2} textColor="secondary" caps>Type annotations</Heading>
+          <CodePane textSize={40}
+            lang="js"
+            source={require("raw-loader!../assets/ta.code")}
+            margin="20px auto"
+          />
+          <Appear>
+          <Text textSize="85" margin="50px 0 0" textColor="secondary" bold fill caps>
+            5700
+          </Text>
+          </Appear>
+        </Slide>
+        
+        <Slide>
+          <Heading size={2} textColor="secondary" caps>Type annotations</Heading>
+          <CodePane textSize={40}
+            lang="js"
+            source={require("raw-loader!../assets/ta.1.code")}
+            margin="20px auto"
+          />
+          <Appear>
+          <Text textSize="85" margin="50px 0 0" textColor="secondary" bold fill>
+            NaN 
+          </Text>
+          </Appear>
+        </Slide>
+
+        <Slide>
+          <Heading size={2} textColor="secondary" caps>Type annotations</Heading>
+          <CodePane textSize={40}
+            lang="js"
+            source={require("raw-loader!../assets/ta.2.code")}
+            margin="20px auto"
+          />
+          <Appear>
+          <Image src={images.ta.replace("/", "")} margin="50px auto"  height="210px"  />
+          </Appear>
+        </Slide>
+
+         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={2} textColor="primary" caps>INTERFACES</Heading>
+        </Slide>
+        
 
       </Deck>
     );
