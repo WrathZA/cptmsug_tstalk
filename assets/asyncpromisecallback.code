@@ -1,0 +1,25 @@
+
+//ASYNC AWAIT
+const p = async () => Promise.resolve(new Date());
+
+(async function() {
+    console.log(await p());
+})();
+ 
+//PROMISES
+const getDatePromises = (secs) => {
+    return new Promise(resolve => {
+        setTimeout(() => resolve(new Date()), secs);
+    })
+}
+
+getDatePromises(2000).then(result => console.log(result));
+
+
+//Callbacks!
+function verboseGetDateInSecs(secs, callbackFunc) {
+    setTimeout(callbackFunc, secs);
+}
+verboseGetDateInSecs(5000, function() {
+    console.log(new Date())
+});

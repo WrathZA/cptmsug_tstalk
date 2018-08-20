@@ -1,0 +1,13 @@
+const timeoutPromise = function (secs) {
+    return new Promise(function (resolve) {
+        setTimeout(function () { 
+            return resolve(); 
+        }, secs);
+    });
+};
+
+console.log(new Date());
+timeoutPromise(2000)
+    .then(function () { 
+        return console.log(new Date()); 
+    });
