@@ -1,0 +1,17 @@
+class Person {
+    private _name: string;
+    public get name(): string {
+        return this._name;
+    }
+    public set name(v: string) {
+        this._name = v;
+    }
+    constructor(name: string) {
+        this._name = name;
+    }
+}
+
+const logName = (p: Person) => console.log(p.name);
+const p = new Person("Brett");
+p.name = "Mutated Brett";
+logName(p);

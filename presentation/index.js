@@ -1,4 +1,5 @@
 // https://github.com/basarat/typescript-book/blob/master/docs/types/discriminated-unions.md
+// https://toddmotto.com/classes-vs-interfaces-in-typescript
 
 // Import React
 import React from "react";
@@ -36,7 +37,9 @@ const images = {
   anders: require("../assets/anders.png"),
   cptmsug: require("../assets/ctmsug.jpg"),
   tsgraph: require("../assets/tsgraph.png"),
-  ta: require("../assets/ta.png")
+  ta: require("../assets/ta.png"),
+  class: require("../assets/class.png"),
+  classGenerics: require("../assets/classGenerics.png"),
 };
 
 preloader(images);
@@ -128,7 +131,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Heading size={2} textColor="primary" caps>JavaScript Types</Heading>
-          <Text textSize="66" textColor="primary" bold>
+          <Text textSize="56" textColor="primary" bold>
             <dl>
               <dt>Boolean</dt>
               <dt>Number</dt>
@@ -170,13 +173,13 @@ export default class Presentation extends React.Component {
             It's development tooling.
           </Text>
           <Appear>
-          <Text textSize="55" margin="50px 0 0" textColor="secondary" bold fill caps>
-            Transpiler
+            <Text textSize="55" margin="50px 0 0" textColor="secondary" bold fill caps>
+              Transpiler
           </Text>
           </Appear>
           <Appear>
-          <Text textSize="55" margin="50px 0 0" textColor="secondary" bold fill caps>
-            Optional Type checking at compile time.
+            <Text textSize="55" margin="50px 0 0" textColor="secondary" bold fill caps>
+              Optional Type checking at compile time.
           </Text>
           </Appear>
         </Slide>
@@ -194,7 +197,7 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-         <Slide>
+        <Slide>
           <Heading size={2} textColor="secondary" caps>TIMEOUT</Heading>
           <CodePane textSize={40}
             lang="js"
@@ -203,7 +206,6 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Heading size={2} textColor="primary" caps>FEATURES!</Heading>
         </Slide>
@@ -216,12 +218,12 @@ export default class Presentation extends React.Component {
             margin="20px auto"
           />
           <Appear>
-          <Text textSize="85" margin="50px 0 0" textColor="secondary" bold fill caps>
-            5700
+            <Text textSize="85" margin="50px 0 0" textColor="secondary" bold fill caps>
+              5700
           </Text>
           </Appear>
         </Slide>
-        
+
         <Slide>
           <Heading size={2} textColor="secondary" caps>Type annotations</Heading>
           <CodePane textSize={40}
@@ -230,8 +232,8 @@ export default class Presentation extends React.Component {
             margin="20px auto"
           />
           <Appear>
-          <Text textSize="85" margin="50px 0 0" textColor="secondary" bold fill>
-            NaN 
+            <Text textSize="85" margin="50px 0 0" textColor="secondary" bold fill>
+              NaN
           </Text>
           </Appear>
         </Slide>
@@ -244,14 +246,39 @@ export default class Presentation extends React.Component {
             margin="20px auto"
           />
           <Appear>
-          <Image src={images.ta.replace("/", "")} margin="50px auto"  height="210px"  />
+            <Image src={images.ta.replace("/", "")} margin="50px auto" height="210px" />
           </Appear>
         </Slide>
 
-         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <Heading size={2} textColor="primary" caps>INTERFACES</Heading>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={2} textColor="primary" caps>CLASSES</Heading>
         </Slide>
-        
+
+        <Slide>
+          <CodePane textSize={34}
+            lang="js"
+            source={require("raw-loader!../assets/class.code")}
+            margin="20px auto"
+          />
+        </Slide>
+
+        <Slide>
+          <CodePane textSize={34}
+            lang="js"
+            source={require("raw-loader!../assets/class.1.code")}
+            margin="20px auto"
+          />
+        </Slide>
+
+        <Slide>
+          <Image src={images.class.replace("/", "")} margin="50px auto" height="800px" />
+        </Slide>
+        <Slide>
+          <Image src={images.classGenerics.replace("/", "")} margin="50px auto" height="750px" />
+        </Slide>
+
+        {/* https://github.com/basarat/typescript-book */}
+
 
       </Deck>
     );

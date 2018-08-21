@@ -1,0 +1,9 @@
+class Person {
+    constructor(public name: string) {
+    }
+}
+
+const logName = (p: Person) => console.log(p.name);
+const p = new Person("Brett");
+p.name = "Mutated Brett";
+logName(p);

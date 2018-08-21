@@ -7,13 +7,14 @@ const p = async () => Promise.resolve(new Date());
 })();
  
 //PROMISES
-const getDatePromises = (secs) => {
+const timeoutPromise = (secs) => {
     return new Promise(resolve => {
-        setTimeout(() => resolve(new Date()), secs);
+        setTimeout(() => resolve(), secs);
     })
 }
 
-getDatePromises(2000).then(result => console.log(result));
+getDatePromises(2000)
+    .then(() => console.log(new Date()));
 
 
 //Callbacks!
