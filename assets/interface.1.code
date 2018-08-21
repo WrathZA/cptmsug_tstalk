@@ -9,6 +9,6 @@ interface IMoreThing extends IThing {
 }
 function func(m:IMoreThing){}
 
-func({someNumber:1, someString: "2"}) ***ERROR***
+func({someNumber:1, someString: "2"}) `***ERROR***`
 func({someNumber:1, someString: "2", randomJunk: true})
 func({someNumber:1, someString: "2", optionalBool: true, randomJunk: true})

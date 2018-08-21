@@ -48,6 +48,9 @@ const images = {
   union: require("../assets/union.png"),
   done: require("../assets/done.gif"),
   ctjs: require("../assets/ctjs.png"),
+  eventloop: require("../assets/EventLoopRepeat.gif"),
+  eventloopstatic: require("../assets/eventloopstatic.png"),
+  TC39: require("../assets/TC39.png"),
 };
 
 preloader(images);
@@ -70,7 +73,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["zoom"]} bgColor="primary">
           <Image src={images.cptmsug.replace("/", "")} margin="0px auto 10px" height="600px" />
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            TypeScript Concepts
+            TypeScript BASICS
           </Heading>
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
             Cape Town JS - September 2018
@@ -100,6 +103,9 @@ export default class Presentation extends React.Component {
                 <ListItem textSize={56}>Delphi</ListItem>
               </Appear>
               <Appear>
+                <ListItem textSize={56}>J++</ListItem>
+              </Appear>
+              <Appear>
                 <ListItem textSize={56}>C#</ListItem>
               </Appear>
               <Appear>
@@ -107,10 +113,23 @@ export default class Presentation extends React.Component {
               </Appear>
             </List>
           </div>
+          <Notes>
+            <ul>
+              <li>original author of Turbo Pascal </li>
+              <li>chief architect of Delphi.</li>
+              <li>lead architect of C#</li>
+              <li>Million Dollar Signing Bonus to MS in 1996!</li>
+            </ul>
+          </Notes>
         </Slide>
 
         <Slide transition={["zoom"]} bgColor="primary">
           <Image src={images.js.replace("/", "")} margin="0px auto 50px" height="700px" />
+          <Notes>
+            <ul>
+              <li>Can't talk about TS with JS</li>
+            </ul>
+          </Notes>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
@@ -133,6 +152,20 @@ export default class Presentation extends React.Component {
           <Text margin="30px auto" textSize="66" textColor="primary" bold>
             Single threaded event driven (loop) architecture with background workers (concurrent)
           </Text>
+          <Notes>
+            <ul>
+              <li>Explain the Event Loop?</li>
+              <li>Message loop in Microsoft Windows GUI apps</li>
+            </ul>
+          </Notes>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Image src={images.eventloopstatic.replace("/", "")} height="900px" />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Image src={images.eventloop.replace("/", "")} height="900px" />
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
@@ -159,20 +192,20 @@ export default class Presentation extends React.Component {
               *FUNCTIONS() are OBJECTS*
             </Text>
           </Appear>
+          <Notes>
+            JavaScript has six primitives types
+            functions are first-class objects, they can have properties and methods just like any other object.
+          </Notes>
         </Slide>
 
         <Slide transition={["zoom"]} bgColor="primary">
           <Image margin="50px auto" src={images.ts.replace("/", "")} margin="0px auto 50px" height="700px" />
+          <Notes>
+            JS that scales
+          </Notes>
         </Slide>
 
-        <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={2} fill lineHeight={1} textColor="secondary">
-            JS === TS, but TS !== JS
-          </Heading>
-          <Image src={images.tsgraph.replace("/", "")} margin="50px auto" height="700px" />
-        </Slide>
-
-        <Slide transition={["zoom"]} bgColor="primary">
+         <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={1} fill lineHeight={1} textColor="secondary">
             What is TS?
           </Heading>
@@ -190,12 +223,29 @@ export default class Presentation extends React.Component {
           </Text>
           </Appear>
         </Slide>
+        
+        <Slide transition={["zoom"]} bgColor="primary">
+          <Heading size={2} fill lineHeight={1} textColor="secondary">
+            JS === TS, but TS !== JS
+          </Heading>
+          <Image src={images.tsgraph.replace("/", "")} margin="50px auto" height="700px" />
+          <Notes>
+            Typed Superset of JS that compiles to JS. European Computer Manufacturers Association. Netscape Story.
+          </Notes>
+        </Slide>
+
+         <Slide>
+          <Image src={images.TC39.replace("/", "")} margin="50px auto" height="500px" />
+          <Text margin="30px auto" textSize="66" textColor="secondary" bold>
+            https://github.com/tc39
+          </Text>
+        </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Heading size={2} textColor="primary" caps>TRANSPILER EXAMPLE</Heading>
         </Slide>
 
-        <Slide>
+        {/* <Slide>
           <Heading size={2} textColor="secondary" caps>BEFORE ASYNC/AWAIT</Heading>
           <CodePane textSize={40}
             lang="js"
@@ -203,7 +253,7 @@ export default class Presentation extends React.Component {
             margin="20px auto"
             theme="external"
           />
-        </Slide>
+        </Slide> */}
 
         <Slide>
           <Heading size={2} textColor="secondary" caps>ASYNC</Heading>
@@ -217,10 +267,6 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Heading size={2} textColor="primary" caps>FEATURES!</Heading>
-        </Slide>
-
-        <Slide>
-          <Image src={images.duck.replace("/", "")} margin="50px auto" height="800px" />
         </Slide>
 
         <Slide>
@@ -267,10 +313,21 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={2} textColor="primary">destroyallsoftware.com/talks/wat</Heading>
+        </Slide>
+
+         <Slide>
+          <Image src={images.duck.replace("/", "")} margin="50px auto" height="800px" />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Heading size={2} textColor="primary" caps>CLASSES</Heading>
           <Text margin="30px auto" textSize="66" textColor="tertiary" bold>
             Classes in TS (or > JS ES6) are object factories.
           </Text>
+          <Notes>
+            new Keyword is out of scope for this chat. See Crockford etc.
+          </Notes>
         </Slide>
 
         <Slide>
@@ -294,11 +351,10 @@ export default class Presentation extends React.Component {
         <Slide>
           <Image src={images.class.replace("/", "")} margin="50px auto" height="800px" />
         </Slide>
+
         <Slide>
           <Image src={images.classGenerics.replace("/", "")} margin="50px auto" height="750px" />
         </Slide>
-
-
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Heading size={2} textColor="primary" caps>INTERFACES</Heading>
@@ -348,7 +404,11 @@ export default class Presentation extends React.Component {
           <Image src={images.enum.replace("/", "")} margin="50px auto" height="900px" />
         </Slide>
 
-         <Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={2} textColor="primary" caps>discriminated unions & literal types</Heading>
+        </Slide>
+
+        <Slide>
           <CodePane textSize={34}
             lang="js"
             source={require("raw-loader!../assets/union.code")}
@@ -357,7 +417,7 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-         <Slide>
+        <Slide>
           <Image src={images.union.replace("/", "")} margin="50px auto" height="500px" />
         </Slide>
 
@@ -365,7 +425,7 @@ export default class Presentation extends React.Component {
           <Image src={images.done.replace("/", "")} margin="50px auto" height="700px" />
         </Slide>
 
-         <Slide transition={["zoom"]} bgColor="primary">
+        <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={1} fill lineHeight={1} textColor="secondary">
             THANKS
           </Heading>
@@ -373,11 +433,11 @@ export default class Presentation extends React.Component {
             Complaints to @WrathZA
           </Text>
           <Text textSize="50" margin="20px 0 0" textColor="secondary" bold fill caps>
-              https://github.com/basarat/typescript-book
+            https://github.com/basarat/typescript-book
           </Text>
           <Image src={images.ctjs.replace("/", "")} margin="50px auto" height="300px" />
           <Text textSize="70" margin="20px 0 0" textColor="secondary" bold fill>
-            Next Meetup: September 12th 
+            Next Meetup: September 12th
           </Text>
         </Slide>
 

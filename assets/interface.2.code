@@ -9,5 +9,5 @@ interface IGenericThing<T, K> {
 function func(m:IGenericThing<Boolean, Number>){}
 
 func({someString:"YOLO", someGeneric: true}) 
-func({someString:"YOLO", someGeneric: "true"})
+func({someString:"YOLO", someGeneric: "true"}) `***ERROR***`
 func({someString:"YOLO", someGeneric: true, OptionalGeneric: 666}) 
