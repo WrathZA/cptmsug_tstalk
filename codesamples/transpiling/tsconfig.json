@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "rootDir": ".",
+        "target": "esnext",
+        "module": "commonjs",
+        "lib": [
+            "dom",
+            "esnext"
+        ],
+        "downlevelIteration": true,
+        "noEmitHelpers": true
+    }
+}

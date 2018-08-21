@@ -9,7 +9,8 @@
     "lint": "eslint --ext .js,.jsx .",
     "deploy": "npm run clean & npm run build && surge -p .",
     "export": "spectacle-renderer --delay 3000",
-    "start": "cross-env NODE_ENV=development node server.js"
+    "start": "cross-env NODE_ENV=development node server.js",
+    "transpile": "tsc -w -p codesamples/transpiling/tsconfig.json"
   },
   "author": "",
   "license": "MIT",
