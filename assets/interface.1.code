@@ -1,0 +1,14 @@
+interface IThing {
+    someString: string;
+    someNumber: number;
+    optionalBool?: boolean;
+}
+//extends
+interface IMoreThing extends IThing {
+    randomJunk: boolean;
+}
+function func(m:IMoreThing){}
+
+func({someNumber:1, someString: "2"}) ***ERROR***
+func({someNumber:1, someString: "2", randomJunk: true})
+func({someNumber:1, someString: "2", optionalBool: true, randomJunk: true})

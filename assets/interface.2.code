@@ -1,0 +1,13 @@
+//generics
+interface IGenericThing<T, K> {
+    someString: string;
+    someGeneric: T
+    OptionalGeneric?: K
+}
+
+
+function func(m:IGenericThing<Boolean, Number>){}
+
+func({someString:"YOLO", someGeneric: true}) 
+func({someString:"YOLO", someGeneric: "true"})
+func({someString:"YOLO", someGeneric: true, OptionalGeneric: 666}) 

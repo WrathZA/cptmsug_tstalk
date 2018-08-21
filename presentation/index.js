@@ -29,6 +29,8 @@ import createTheme from "spectacle/lib/themes/default";
 // Require CSS
 require("normalize.css");
 require("../assets/override.css");
+// require("../assets/xonokai.css");
+require("../assets/atomdark.css");
 
 const images = {
   son: require("../assets/sonof.png"),
@@ -40,6 +42,12 @@ const images = {
   ta: require("../assets/ta.png"),
   class: require("../assets/class.png"),
   classGenerics: require("../assets/classGenerics.png"),
+  duck: require("../assets/duck.jpg"),
+  guard: require("../assets/guard.png"),
+  enum: require("../assets/enum.png"),
+  union: require("../assets/union.png"),
+  done: require("../assets/done.gif"),
+  ctjs: require("../assets/ctjs.png"),
 };
 
 preloader(images);
@@ -75,8 +83,6 @@ export default class Presentation extends React.Component {
           </Heading>
           <Image margin="50px auto" src={images.son.replace("/", "")} margin="0px auto 50px" height="700px" />
         </Slide>
-
-
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Heading margin={"0px auto 20px"} size={1} fill caps lineHeight={1} textColor="tertiary">
@@ -131,13 +137,14 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Heading size={2} textColor="primary" caps>JavaScript Types</Heading>
-          <Text textSize="56" textColor="primary" bold>
+          <Text textSize="46" textColor="primary" bold>
             <dl>
               <dt>Boolean</dt>
               <dt>Number</dt>
               <dt>String</dt>
               <dt>Null</dt>
               <dt>Undefined</dt>
+              <dt>Symbol</dt>
               <dt>---</dt>
               <dt>Object {"{"} {"}"}</dt>
             </dl>
@@ -189,20 +196,22 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
-          <Heading size={2} textColor="secondary" caps>ASYNC TIMEOUT</Heading>
-          <CodePane textSize={40}
-            lang="js"
-            source={require("raw-loader!../assets/asynctimeout.code")}
-            margin="20px auto"
-          />
-        </Slide>
-
-        <Slide>
-          <Heading size={2} textColor="secondary" caps>TIMEOUT</Heading>
+          <Heading size={2} textColor="secondary" caps>BEFORE ASYNC/AWAIT</Heading>
           <CodePane textSize={40}
             lang="js"
             source={require("raw-loader!../assets/timeoutPromise.code")}
             margin="20px auto"
+            theme="external"
+          />
+        </Slide>
+
+        <Slide>
+          <Heading size={2} textColor="secondary" caps>ASYNC</Heading>
+          <CodePane textSize={40}
+            lang="js"
+            source={require("raw-loader!../assets/asynctimeout.code")}
+            margin="20px auto"
+            theme="external"
           />
         </Slide>
 
@@ -211,11 +220,16 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
+          <Image src={images.duck.replace("/", "")} margin="50px auto" height="800px" />
+        </Slide>
+
+        <Slide>
           <Heading size={2} textColor="secondary" caps>Type annotations</Heading>
           <CodePane textSize={40}
             lang="js"
             source={require("raw-loader!../assets/ta.code")}
             margin="20px auto"
+            theme="external"
           />
           <Appear>
             <Text textSize="85" margin="50px 0 0" textColor="secondary" bold fill caps>
@@ -230,6 +244,7 @@ export default class Presentation extends React.Component {
             lang="js"
             source={require("raw-loader!../assets/ta.1.code")}
             margin="20px auto"
+            theme="external"
           />
           <Appear>
             <Text textSize="85" margin="50px 0 0" textColor="secondary" bold fill>
@@ -244,6 +259,7 @@ export default class Presentation extends React.Component {
             lang="js"
             source={require("raw-loader!../assets/ta.2.code")}
             margin="20px auto"
+            theme="external"
           />
           <Appear>
             <Image src={images.ta.replace("/", "")} margin="50px auto" height="210px" />
@@ -252,6 +268,9 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Heading size={2} textColor="primary" caps>CLASSES</Heading>
+          <Text margin="30px auto" textSize="66" textColor="tertiary" bold>
+            Classes in TS (or > JS ES6) are object factories.
+          </Text>
         </Slide>
 
         <Slide>
@@ -259,6 +278,7 @@ export default class Presentation extends React.Component {
             lang="js"
             source={require("raw-loader!../assets/class.code")}
             margin="20px auto"
+            theme="external"
           />
         </Slide>
 
@@ -267,6 +287,7 @@ export default class Presentation extends React.Component {
             lang="js"
             source={require("raw-loader!../assets/class.1.code")}
             margin="20px auto"
+            theme="external"
           />
         </Slide>
 
@@ -277,10 +298,91 @@ export default class Presentation extends React.Component {
           <Image src={images.classGenerics.replace("/", "")} margin="50px auto" height="750px" />
         </Slide>
 
-        {/* https://github.com/basarat/typescript-book */}
 
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={2} textColor="primary" caps>INTERFACES</Heading>
+          <Text margin="30px auto" textSize="66" textColor="tertiary" bold>
+            Only exists within the context of TypeScript used solely for Type Checking
+          </Text>
+        </Slide>
+
+        <Slide>
+          <CodePane textSize={34}
+            lang="js"
+            source={require("raw-loader!../assets/interface.code")}
+            margin="20px auto"
+            theme="external"
+          />
+        </Slide>
+        <Slide>
+          <CodePane textSize={34}
+            lang="js"
+            source={require("raw-loader!../assets/interface.1.code")}
+            margin="20px auto"
+            theme="external"
+          />
+        </Slide>
+        <Slide>
+          <CodePane textSize={34}
+            lang="js"
+            source={require("raw-loader!../assets/interface.2.code")}
+            margin="20px auto"
+            theme="external"
+          />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={2} textColor="primary" caps>TYPE | GUARDS</Heading>
+        </Slide>
+
+        <Slide>
+          <Image src={images.guard.replace("/", "")} margin="50px auto" height="550px" />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={2} textColor="primary" caps>ENUMS</Heading>
+        </Slide>
+
+        <Slide>
+          <Image src={images.enum.replace("/", "")} margin="50px auto" height="900px" />
+        </Slide>
+
+         <Slide>
+          <CodePane textSize={34}
+            lang="js"
+            source={require("raw-loader!../assets/union.code")}
+            margin="20px auto"
+            theme="external"
+          />
+        </Slide>
+
+         <Slide>
+          <Image src={images.union.replace("/", "")} margin="50px auto" height="500px" />
+        </Slide>
+
+        <Slide>
+          <Image src={images.done.replace("/", "")} margin="50px auto" height="700px" />
+        </Slide>
+
+         <Slide transition={["zoom"]} bgColor="primary">
+          <Heading size={1} fill lineHeight={1} textColor="secondary">
+            THANKS
+          </Heading>
+          <Text textSize="70" margin="20px 0 0" textColor="tertiary" bold fill>
+            Complaints to @WrathZA
+          </Text>
+          <Text textSize="50" margin="20px 0 0" textColor="secondary" bold fill caps>
+              https://github.com/basarat/typescript-book
+          </Text>
+          <Image src={images.ctjs.replace("/", "")} margin="50px auto" height="300px" />
+          <Text textSize="70" margin="20px 0 0" textColor="secondary" bold fill>
+            Next Meetup: September 12th 
+          </Text>
+        </Slide>
 
       </Deck>
     );
   }
 }
+{/* https://github.com/basarat/typescript-book */ }

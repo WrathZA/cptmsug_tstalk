@@ -1,0 +1,11 @@
+type myThings = "Ducky" | "Squirrel" | "Pancake"
+
+function DoThing(thing: myThings){
+    switch (thing) { //INFERS my TYPE HERE
+        case "Pancake": console.log('Yellow'); break;
+        case "Squirrel": console.log('Furry'); break;
+    }
+}
+
+DoThing("Pancake");
+DoThing("DUCKY"); `***ERROR***`

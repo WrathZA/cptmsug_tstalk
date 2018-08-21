@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "rootDir": ".",
-        "target": "esnext",
+        "target": "es3",
         "module": "commonjs",
         "lib": [
             "dom",

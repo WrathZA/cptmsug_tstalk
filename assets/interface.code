@@ -1,0 +1,12 @@
+interface IThing {
+    someString: string;
+    someNumber: number;
+    optionalBool?: boolean;
+}
+
+function func(m:IThing){}
+
+func({someNumber:1}) `***ERROR***`
+func({someNumber:1, someString: "2"})
+func({someNumber:1, someString: "2", optionalBool: true})
+func({someNumber:1, someString: "2", randomJunk: {}})  `***ERROR***`
