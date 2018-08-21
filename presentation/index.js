@@ -65,7 +65,7 @@ export default class Presentation extends React.Component {
             TypeScript Concepts
           </Heading>
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            Cape Town JS - September 2017
+            Cape Town JS - September 2018
           </Text>
         </Slide>
 
