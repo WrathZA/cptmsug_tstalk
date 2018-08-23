@@ -1,3 +1,11 @@
+Typescript talk give the Cape Town Microsoft user group August 2018
+
+PDF sample in ./PDF
+
+https://www.meetup.com/Cape-Town-Ms-Dev-User-Group/events/250843745/
+
+---------------------------------------
+
 # Spectacle Boilerplate
 
 ## Contents
