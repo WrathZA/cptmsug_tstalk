@@ -1,14 +1,30 @@
-enum Things {
-    Boat,
-    Shoe,
-    Banana,
-    Whatever = 99
+function DoThing(arg: string | number){
+    if (typeof arg === "string") {
+        arg.toUpperCase();
+        arg.toExponential();
+    } else {
+        arg.toUpperCase();
+        arg.toExponential();
+        return;
+    }
+    
 }
 
-function DoThing(thing: Things){
-    switch (thing){
-        case Things.Banana: console.log('Yellow'); break;
-        case Things.Shoe: console.log('Laces!'); break;
-        default: throw new Error(`DIDN'T DEAL WITH THING!`)
+//Control flow anal
+
+type foo = {
+    yolo: 1
+}
+
+function isFoo(arg: any): arg is foo {
+    return typeof arg === "object" && arg.yolo === 1;
+}
+
+function bar(value) {
+    if (isFoo(value)){
+        value.
     }
 }
+
+
+

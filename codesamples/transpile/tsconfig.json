@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "rootDir": ".",
-        "target": "esnext",
+        "target": "es5",
         "lib": [
             "dom",
             "esnext"
