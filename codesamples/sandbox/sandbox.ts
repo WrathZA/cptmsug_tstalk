@@ -1,4 +1,4 @@
-function DoThing(arg: string | number){
+function DoThing(arg: string | number | undefined){
     if (typeof arg === "string") {
         arg.toUpperCase();
         arg.toExponential();

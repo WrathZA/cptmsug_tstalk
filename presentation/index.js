@@ -51,6 +51,8 @@ const images = {
   eventloop: require("../assets/EventLoopRepeat.gif"),
   eventloopstatic: require("../assets/eventloopstatic.png"),
   TC39: require("../assets/TC39.png"),
+  ctfeds: require("../assets/ctfeds.png"),
+  attypes: require("../assets/attypes.png"),
 };
 
 preloader(images);
@@ -71,12 +73,12 @@ export default class Presentation extends React.Component {
       <Deck controls={false} transition={["zoom", "slide"]} transitionDuration={500} theme={theme} contentWidth={1800} contentHeight={1000} progress="none">
 
         <Slide transition={["zoom"]} bgColor="primary">
-          <Image src={images.cptmsug.replace("/", "")} margin="0px auto 10px" height="600px" />
+          <Image src={images.ctfeds.replace("/", "")} margin="0px auto 100px" height="400px" />
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             TypeScript BASICS
           </Heading>
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            CPTMSDUG - September 2018
+            CTFEDS - October 2018
           </Text>
         </Slide>
 
@@ -316,8 +318,15 @@ export default class Presentation extends React.Component {
           <Heading size={2} textColor="primary">destroyallsoftware.com/talks/wat</Heading>
         </Slide>
 
+         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={1} textColor="tertiary" caps>Definitely Typed</Heading>
+          <Text textSize="70" margin="20px 0 0" textColor="primary" bold fill>
+            npm install @types/~PACKAGENAME~ -D
+          </Text>
+        </Slide>
+
          <Slide>
-          <Image src={images.duck.replace("/", "")} margin="50px auto" height="800px" />
+          <Image src={images.attypes.replace("/", "")} margin="50px auto" height="700px" />
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
@@ -346,6 +355,10 @@ export default class Presentation extends React.Component {
             margin="20px auto"
             theme="external"
           />
+        </Slide>
+
+         <Slide>
+          <Image src={images.duck.replace("/", "")} margin="50px auto" height="800px" />
         </Slide>
 
         <Slide>
@@ -417,6 +430,8 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
+       
+
         <Slide>
           <Image src={images.union.replace("/", "")} margin="50px auto" height="500px" />
         </Slide>
@@ -437,7 +452,7 @@ export default class Presentation extends React.Component {
           </Text>
           <Image src={images.ctjs.replace("/", "")} margin="50px auto" height="300px" />
           <Text textSize="70" margin="20px 0 0" textColor="secondary" bold fill>
-            Next Meetup: September 12th
+            Next Meetup: November?
           </Text>
         </Slide>
 
